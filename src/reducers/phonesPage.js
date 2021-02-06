@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 
-import { FETCH_PHONES_SUCCESS } from '../actionTypes'
+import { FETCH_PHONES_SUCCESS, LOAD_MORE_PHONES_SUCCESS } from '../actionTypes'
 
 const initialState = {
   ids: [],
@@ -12,6 +12,13 @@ export default (state = initialState, { type, payload }) => {
       return R.merge(state, {
         ids: R.pluck('id', payload),
       })
+      break
+    case LOAD_MORE_PHONES_SUCCESS:
+      const ids = R.pluck('id', payload)
+      return R.merge(state, {
+        ids: R.concat(state.ids, ids),
+      })
+      break
 
     default:
       return state
