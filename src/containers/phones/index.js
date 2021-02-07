@@ -5,6 +5,7 @@ import * as R from 'ramda'
 
 import { fetchPhones, loadMorePhones } from '../../actions'
 import { getPhones } from '../../selectors'
+import Layout from '../layout'
 
 class Phones extends Component {
   componentDidMount() {
@@ -39,7 +40,7 @@ class Phones extends Component {
   render() {
     const { phones, loadMorePhones } = this.props
     return (
-      <div>
+      <Layout>
         <div className="books row">
           {phones.map((phone, index) => this.renderPhone(phone, index))}
         </div>
@@ -53,7 +54,7 @@ class Phones extends Component {
             </button>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
