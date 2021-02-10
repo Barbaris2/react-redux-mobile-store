@@ -428,6 +428,7 @@ nav.navbar-inverse .navbar-nav > li > a.Active {
 .thumbnail img {
   /* width: 100%;*/
   display: inline-block !important;
+  border: none;
 }
 
 .ratings {
