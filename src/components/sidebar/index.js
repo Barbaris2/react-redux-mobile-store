@@ -1,5 +1,5 @@
 import React from 'react'
-import BasketCart from './basketCart'
+import BasketCart from '../basketCart'
 
 const Sidebar = () => {
   return (
